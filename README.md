@@ -1,8 +1,13 @@
 # ArchiMate summary
 
-References:
+Resources:
+
+* [The ArchiMate Enterprise Architecture Modeling Language](https://www.opengroup.org/archimate-forum/archimate-overview)
+
+* [ArchiMate Cookbook](http://www.hosiaisluoma.fi/ArchiMate-Cookbook.pdf)
 
 * [ArchiMate PlantUML macros](https://github.com/plantuml-stdlib/Archimate-PlantUML/blob/master/Archimate.puml)
+
 
 ## ArchiMate terminology
 
