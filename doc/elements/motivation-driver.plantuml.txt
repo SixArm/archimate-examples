@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Motivation_Driver(Motivation_Driver,, "Motivation Driver")
+Motivation_Driver(Driver, "Driver")
 @enduml

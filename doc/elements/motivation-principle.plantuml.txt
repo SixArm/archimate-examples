@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Motivation_Principle(Motivation_Principle,, "Motivation Principle")
+Motivation_Principle(Principle, "Principle")
 @enduml

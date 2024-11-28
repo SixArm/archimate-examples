@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Business_Contract(Business_Contract,, "Business Contract")
+Business_Contract(Contract, "Contract")
 @enduml

@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Physical_DistributionNetwork(Physical_DistributionNetwork,, "Physical Distribution Network")
+Physical_DistributionNetwork(DistributionNetwork, "Distribution Network")
 @enduml

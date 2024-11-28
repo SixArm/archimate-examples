@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Physical_Equipment(Physical_Equipment,, "Physical Equipment")
+Physical_Equipment(Equipment, "Equipment")
 @enduml

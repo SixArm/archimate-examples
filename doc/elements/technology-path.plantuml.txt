@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Technology_Path(Technology_Path,, "Technology Path")
+Technology_Path(Path, "Path")
 @enduml

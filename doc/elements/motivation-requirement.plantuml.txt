@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Motivation_Requirement(Motivation_Requirement,, "Motivation Requirement")
+Motivation_Requirement(Requirement, "Requirement")
 @enduml

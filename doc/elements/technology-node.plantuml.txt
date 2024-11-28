@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Technology_Node(Technology_Node,, "Technology Node")
+Technology_Node(Node, "Node")
 @enduml

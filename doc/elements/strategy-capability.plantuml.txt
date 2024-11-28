@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Strategy_Capability(Strategy_Capability,, "Strategy Capability")
+Strategy_Capability(Capability, "Capability")
 @enduml

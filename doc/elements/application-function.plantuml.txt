@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Application_Function(Application_Function,, "Application Function")
+Application_Function(Application_Function, "Application Function")
 @enduml

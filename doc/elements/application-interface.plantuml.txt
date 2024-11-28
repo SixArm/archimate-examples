@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Application_Interface(Application_Interface,, "Application Interface")
+Application_Interface(Application_Interface, "Application Interface")
 @enduml

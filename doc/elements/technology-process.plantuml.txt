@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Technology_Process(Technology_Process,, "Technology Process")
+Technology_Process(Technology_Process, "Technology Process")
 @enduml

@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Business_Collaboration(Business_Collaboration,, "Business Collaboration")
+Business_Collaboration(Business_Collaboration, "Business Collaboration")
 @enduml

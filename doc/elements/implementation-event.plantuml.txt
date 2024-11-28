@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Implementation_Event(Implementation_Event,, "Implementation Event")
+Implementation_Event(Implementation_Event, "Implementation Event")
 @enduml

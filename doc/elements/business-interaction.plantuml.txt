@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Business_Interaction(Business_Interaction,, "Business Interaction")
+Business_Interaction(Business_Interaction, "Business Interaction")
 @enduml

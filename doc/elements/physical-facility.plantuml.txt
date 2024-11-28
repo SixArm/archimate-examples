@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Physical_Facility(Physical_Facility,, "Physical Facility")
+Physical_Facility(Facility, "Facility")
 @enduml

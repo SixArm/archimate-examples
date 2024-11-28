@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Physical_Material(Physical_Material,, "Physical Material")
+Physical_Material(Material, "Material")
 @enduml

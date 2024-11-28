@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Motivation_Constraint(Motivation_Constraint,, "Motivation Constraint")
+Motivation_Constraint(Constraint, "Constraint")
 @enduml

@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Business_Representation(Business_Representation,, "Business Representation")
+Business_Representation(Representation, "Representation")
 @enduml

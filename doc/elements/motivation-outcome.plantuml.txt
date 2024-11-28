@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Motivation_Outcome(Motivation_Outcome,, "Motivation Outcome")
+Motivation_Outcome(Outcome, "Outcome")
 @enduml

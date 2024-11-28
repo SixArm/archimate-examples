@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Technology_Event(Technology_Event,, "Technology Event")
+Technology_Event(Technology_Event, "Technology Event")
 @enduml

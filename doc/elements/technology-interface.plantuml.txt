@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Technology_Interface(Technology_Interface,, "Technology Interface")
+Technology_Interface(Technology_Interface, "Technology Interface")
 @enduml

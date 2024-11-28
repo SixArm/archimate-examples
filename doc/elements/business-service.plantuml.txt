@@ -1,4 +1,4 @@
 @startuml
 !include <archimate/Archimate>
-Business_Service(Business_Service,, "Business Service")
+Business_Service(Business_Service, "Business Service")
 @enduml
