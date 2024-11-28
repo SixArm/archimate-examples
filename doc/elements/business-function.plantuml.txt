@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Business_Function(Business_Function,, "Business Function")
+@enduml

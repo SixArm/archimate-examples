@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Strategy_CourseOfAction(Strategy_CourseOfAction,, "Strategy Course of Action")
+@enduml

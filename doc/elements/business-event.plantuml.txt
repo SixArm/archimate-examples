@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Business_Event(Business_Event,, "Business Event")
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_Service(Technology_Service,, "Technology Service")
+@enduml

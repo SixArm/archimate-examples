@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Implementation_WorkPackage(Implementation_WorkPackage,, "Implementation Work Package")
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_Interaction(Technology_Interaction,, "Technology Interaction")
+@enduml

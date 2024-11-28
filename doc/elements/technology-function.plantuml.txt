@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_Function(Technology_Function,, "Technology Function")
+@enduml

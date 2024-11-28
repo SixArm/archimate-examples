@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Motivation_Meaning(Motivation_Meaning,, "Motivation Meaning")
+@enduml

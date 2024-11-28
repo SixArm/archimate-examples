@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Application_DataObject(Application_DataObject,, "Application Data Object")
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Strategy_Resource(Strategy_Resource,, "Strategy Resource")
+@enduml

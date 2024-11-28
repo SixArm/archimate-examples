@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Application_Event(Application_Event,, "Application Event")
+@enduml

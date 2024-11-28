@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_CommunicationNetwork(Technology_CommunicationNetwork,, "Technology Communication Network")
+@enduml

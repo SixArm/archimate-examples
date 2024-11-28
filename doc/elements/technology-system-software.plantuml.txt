@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_SystemSoftware(Technology_SystemSoftware,, "Technology System Software")
+@enduml

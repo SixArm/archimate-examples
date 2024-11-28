@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_Device(Technology_Device,, "Technology Device")
+@enduml

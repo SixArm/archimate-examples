@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Implementation_Plateau(Implementation_Plateau,, "Implementation Plateau")
+@enduml

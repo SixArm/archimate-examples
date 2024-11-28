@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Strategy_ValueStream(Strategy_ValueStream,, "Strategy Value Stream")
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Motivation_Goal(Motivation_Goal,, "Motivation Goal")
+@enduml

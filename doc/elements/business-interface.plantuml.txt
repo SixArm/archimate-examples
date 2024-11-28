@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Business_Interface(Business_Interface,, "Business Interface")
+@enduml

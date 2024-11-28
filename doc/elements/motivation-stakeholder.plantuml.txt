@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Motivation_Stakeholder(Motivation_Stakeholder,, "Motivation Stakeholder")
+@enduml

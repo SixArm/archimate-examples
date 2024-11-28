@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Business_Actor(Business_Actor,, "Business Actor")
+@enduml

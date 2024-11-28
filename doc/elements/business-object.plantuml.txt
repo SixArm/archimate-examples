@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Business_Object(Business_Object,, "Business Object")
+@enduml

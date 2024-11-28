@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Application_Collaboration(Application_Collaboration,, "Application Collaboration")
+@enduml

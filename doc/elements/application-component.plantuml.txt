@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Application_Component(Application_Component,, "Application Component")
+@enduml

@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Motivation_Assessment(Motivation_Assessment,, "Motivation Assessment")
+@enduml

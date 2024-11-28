@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Technology_Collaboration(Technology_Collaboration,, "Technology Collaboration")
+@enduml

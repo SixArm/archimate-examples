@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Business_Process(Business_Process,, "Business Process")
+@enduml

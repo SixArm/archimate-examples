@@ -1,0 +1,4 @@
+@startuml
+!include <archimate/Archimate>
+Application_Interaction(Application_Interaction,, "Application Interaction")
+@enduml
