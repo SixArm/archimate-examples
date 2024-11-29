@@ -8,6 +8,8 @@ Resources:
 
 * [ArchiMate PlantUML macros](https://github.com/plantuml-stdlib/Archimate-PlantUML/blob/master/Archimate.puml)
 
+* [Examples](doc/examples)
+  
 
 ## ArchiMate terminology
 

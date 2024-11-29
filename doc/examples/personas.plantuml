@@ -1,0 +1,47 @@
+@startuml
+scale 1920*1080
+!include archimate.puml
+
+title Personas Example
+
+Group(personas, "Personas") {
+
+    Group(group_ceo, "CEO wants expansion") {
+
+        Motivation_Stakeholder(ceo, "Chief Executive Officer")
+        Motivation_Driver(enhance_future_investments, "Enhance planning via Excel")
+        Rel_Assignment(ceo, enhance_future_investments, "driver")
+        Motivation_Assessment(excel_assessment, "Excel sheets are mostly working")
+        Rel_Assignment(enhance_future_investments, excel_assessment, "assessment")
+        Motivation_Goal(predict_future_profits, "Optimize next year's investing")
+        Rel_Assignment(excel_assessment, predict_future_profits, "goal")
+
+    }
+
+    Group(group_cpo, "CPO wants growth") {
+
+        Motivation_Stakeholder(cpo, " Chief Product Officer")
+        Motivation_Driver(provide_better_advice, "Provide dashboards advice to clients")
+        Rel_Assignment(cpo, provide_better_advice, "driver")
+        Motivation_Assessment(clients_assessment, "Clients want more predictive guidance")
+        Rel_Assignment(provide_better_advice, clients_assessment, "assessment")
+        Motivation_Goal(product_led_growth, "Product-led growth of 10% in Q1")
+        Rel_Assignment(clients_assessment, product_led_growth, "goal")
+
+    }
+
+    Group(group_cto, "CFO wants compliance") {
+
+        Motivation_Stakeholder(cfo, " Chief Financial Officer")
+        Motivation_Driver(simplify_past_analyses, "Simplify reviews via QuickBooks")
+        Rel_Assignment(cfo, simplify_past_analyses, "driver")
+        Motivation_Assessment(quickbooks_assessment, "QuickBooks API is fully working")
+        Rel_Assignment(simplify_past_analyses, quickbooks_assessment, "assessment")
+        Motivation_Goal(review_past_payments, "Audit past payments")
+        Rel_Assignment(quickbooks_assessment, review_past_payments, "goal")
+
+    }
+
+}
+
+@enduml
