@@ -1,0 +1,52 @@
+@startuml
+scale 1920*1080
+!include Archimate.puml
+
+title Applications Example
+
+Group(components, "Components") {
+
+    Application_Component(website, "Website\n(HTML/CSS static pages)")
+    Application_Interface(frontend, "Frontend Web App\n(JavaScript Svelte SPA)")
+    Application_Service(backend, "Backend Web Services\n(Elixir Phoenix API)")
+    Application_Function(data, "Persistence\n(PostgreSQL database)")
+
+    Rel_Serving_Down(website, frontend)
+    Rel_Serving_Down(frontend, backend)
+    Rel_Serving_Down(backend, data)
+
+}
+
+Group(vendors, "Vendors") {
+
+    Technology_Node(github, "GitHub", true) {
+        Technology_SystemSoftware(github_dependabot, "GitHub Dependabot\n(security scanning)")
+        Technology_SystemSoftware(github_actions_ci_cd, "GitHub Actions CI/CD\n(continuous integration)")
+    }
+
+    Technology_Node(aws, "Amazon Web Services (AWS)", true) {
+        Technology_SystemSoftware(aws_ecr, "Elastic Container Registry (ECR)\n(managed Docker containers)")
+        Technology_SystemSoftware(aws_rds, "Relational Database Service (RDS)\n(managed Postgres databases)")
+    }
+
+}
+
+Technology_Function(system_quality_attributes, "System Quality Attributes", true) {
+
+    Technology_Function(security, "security")
+    Rel_Serving_Down(github_dependabot, security)
+
+    Technology_Function(deployability, "deployability")
+    Rel_Serving_Down(github_actions_ci_cd, deployability)
+
+    Technology_Function(durability, "durability")
+    Rel_Serving_Down(aws_rds, durability)
+
+    Technology_Function(autoscalability, "autoscalability")
+    Rel_Serving_Down(aws_ecr, autoscalability)
+
+}
+
+Rel_Serving_Down(components, vendors)
+
+@enduml
