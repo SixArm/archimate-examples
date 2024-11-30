@@ -1,0 +1,51 @@
+@startuml
+scale 1920*1080
+!include archimate.puml
+
+title Value Stream Map Details Example
+
+Strategy_ValueStream(design, "**Design**\n12-24 hours work time\n6-9 days wall time") 
+Strategy_ValueStream(visualize_features, "**Visualize features**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(draft_mockups, "**Draft mockups**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(confirm_plans, "**Confirm plans with customers**\n4-8 hours work time\n2-3 days wall time")
+Rel_Aggregation_Down(design, visualize_features)
+Rel_Aggregation_Down(design, draft_mockups)
+Rel_Aggregation_Down(design, confirm_plans)
+Rel_Flow_Right(visualize_features, draft_mockups)
+Rel_Flow_Right(draft_mockups, confirm_plans)
+
+Strategy_ValueStream(develop, "**Develop**\n12-24 hours work time\n6-9 days wall time")
+Strategy_ValueStream(code_front_end, "**Code front-end dashboards**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(program_back_end, "**Program back-end services**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(update_documentation, "**Update documentation**\n4-8 hours work time\n2-3 days wall time")
+Rel_Aggregation_Down(develop, code_front_end)
+Rel_Aggregation_Down(develop, program_back_end)
+Rel_Aggregation_Down(develop, update_documentation)
+Rel_Flow_Right(code_front_end, program_back_end)
+Rel_Flow_Right(program_back_end,update_documentation)
+
+Strategy_ValueStream(deploy, "**Deploy**\n12-24 hours work time\n6-9 days wall time")
+Strategy_ValueStream(push_topic, "**Push topic branch**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(review_code, "**Review code and test it**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(release_build, "**Release build into production**\n4-8 hours work time\n2-3 days wall time")
+Rel_Aggregation_Down(deploy, push_topic)
+Rel_Aggregation_Down(deploy, review_code)
+Rel_Aggregation_Down(deploy, release_build)
+Rel_Flow_Right(push_topic, review_code)
+Rel_Flow_Right(review_code, release_build)
+
+Strategy_ValueStream(deliver, "**Deliver**\n12-24 hours work time\n6-9 days wall time")
+Strategy_ValueStream(sign_acceptance, "**Sign acceptance**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(refresh_nps, "**Refresh Net Promoter Score**\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(send_invoice, "**Send invoice and get paid **\n4-8 hours work time\n2-3 days wall time")
+Rel_Aggregation_Down(deliver, sign_acceptance)
+Rel_Aggregation_Down(deliver, refresh_nps)
+Rel_Aggregation_Down(deliver, send_invoice)
+Rel_Flow_Right(sign_acceptance, refresh_nps)
+Rel_Flow_Right(refresh_nps, send_invoice)
+
+Rel_Flow_Right(design, develop)
+Rel_Flow_Right(develop, deploy)
+Rel_Flow_Right(deploy, deliver)
+
+@enduml

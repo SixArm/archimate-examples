@@ -4,7 +4,7 @@ scale 1920*1080
 
 title Value Stream Map Example
 
-Strategy_ValueStream(design, "**Design**\n12-24 hours work time\n6-9 days wall time\n\n--\nVisualize features\n4-8 hours work time\n2-3 days wall time\n--\nCreate mockups\n4-8 hours work time\n2-3 days wall time\n--\nVerify with customers\n4-8 hours work time\n2-3 days wall time")
+Strategy_ValueStream(design, "**Design**\n12-24 hours work time\n6-9 days wall time\n\n--\nVisualize features\n4-8 hours work time\n2-3 days wall time\n--\nDraft mockups\n4-8 hours work time\n2-3 days wall time\n--\nConfirm with customers\n4-8 hours work time\n2-3 days wall time")
 Strategy_ValueStream(develop, "**Develop**\n12-24 hours work time\n6-9 days wall time\n\n--\nCode front-end dashboards\n4-8 hours work time\n2-3 days wall time\n--\nProgram back-end services\n4-8 hours work time\n2-3 days wall time\n--\nUpdate documentation\n4-8 hours work time\n2-3 days wall time")
 Strategy_ValueStream(deploy, "**Deploy**\n12-24 hours work time\n6-9 days wall time\n\n--\nPush topic branch\n4-8 hours work time\n2-3 days wall time\n--\nReview code and test it\n4-8 hours work time\n2-3 days wall time\n--\nRelease into production\n4-8 hours work time\n2-3 days wall time")
 Strategy_ValueStream(deliver, "**Deliver**\n12-24 hours work time\n6-9 days wall time\n\n--\nDo customer acceptance tests\n4-8 hours work time\n2-3 days wall time\n--\nRefresh Net Promoter Score\n4-8 hours work time\n2-3 days wall time\n--\nSend invoice and get paid \n4-8 hours work time\n2-3 days wall time")
