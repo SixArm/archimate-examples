@@ -16,14 +16,16 @@ Rel_Flow_Right(deploy, deliver)
 ' If you prefer to see just the value stream steps,
 ' then you can comment out the following lines.
 
-Motivation_Stakeholder(customer, "Customer Team")
-Motivation_Stakeholder(account_executive, "Account Executive")
-Motivation_Stakeholder(work_squad, "Work Team")
+Motivation_Stakeholder(customer_team, "**Customer Team**\n\n--\nDriver: Solving their pain point\n--\nAssessment: GUI is confusing\n--\nGoal: Navigation link to new item")
+Motivation_Stakeholder(account_executive, "**Account Executive**\n\n--\nDriver: sales-led satisfaction\n--\nAssessment: Priority 1 papercut\n--\nGoal: Net Promoter Score 25+")
+Motivation_Stakeholder(product_manager, "**Product Manager**\n\n--\nDriver: product-led growth\n--\nAssessment: Can help all accounts\n--\nGoal: Kanban zero papercuts")
+Motivation_Stakeholder(work_squad, "**Work Squad**\n\n--\nDriver: feature-led delivery\n--\nAssessment: Size is small\n--\nGoal: Deliver by end of week 40")
 
 Rel_Flow_Left(customer_team, account_executive)
-Rel_Flow_Left(account_executive, work_team)
+Rel_Flow_Left(account_executive, product_manager)
+Rel_Flow_Left(product_manager, work_squad)
 
-Rel_Flow_Down(work_team, design)
+Rel_Flow_Down(work_squad, design)
 Rel_Flow_Up(deliver, customer_team)
 
 @enduml
