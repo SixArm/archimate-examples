@@ -1,8 +1,8 @@
 @startuml
 scale 1920*1080
-!include archimate.puml
+!include ../Archimate.puml
 
-title Value Stream Map Example
+title Value Stream Map
 
 Strategy_ValueStream(design, "**Design**\n12-24 hours work time\n6-9 days wall time\n\n--\nVisualize features\n4-8 hours work time\n2-3 days wall time\n--\nDraft mockups\n4-8 hours work time\n2-3 days wall time\n--\nConfirm with customers\n4-8 hours work time\n2-3 days wall time")
 Strategy_ValueStream(develop, "**Develop**\n12-24 hours work time\n6-9 days wall time\n\n--\nCode front-end dashboards\n4-8 hours work time\n2-3 days wall time\n--\nProgram back-end services\n4-8 hours work time\n2-3 days wall time\n--\nUpdate documentation\n4-8 hours work time\n2-3 days wall time")
@@ -12,5 +12,18 @@ Strategy_ValueStream(deliver, "**Deliver**\n12-24 hours work time\n6-9 days wall
 Rel_Flow_Right(design, develop)
 Rel_Flow_Right(develop, deploy)
 Rel_Flow_Right(deploy, deliver)
+
+' If you prefer to see just the value stream steps,
+' then you can comment out the following lines.
+
+Motivation_Stakeholder(customer, "Customer Team")
+Motivation_Stakeholder(account_executive, "Account Executive")
+Motivation_Stakeholder(work_squad, "Work Team")
+
+Rel_Flow_Left(customer_team, account_executive)
+Rel_Flow_Left(account_executive, work_team)
+
+Rel_Flow_Down(work_team, design)
+Rel_Flow_Up(deliver, customer_team)
 
 @enduml
