@@ -2,51 +2,81 @@
 scale 1920*1080
 !include ../../../Archimate.puml
 
-title Applications Example
+title Applications
 
-Group(components, "Components") {
+Group(landing_group, "Landing") {
 
-    Application_Component(website, "Website\n(HTML/CSS static pages)")
+    Application_Component(landing, "Landing Website\n(HTML/CSS static pages)")
+
+    Application_Component(welcome_page, "Welcome Page")
+    Rel_Aggregation_Down(landing, welcome_page)
+
+    Application_Component(contact_us, "Contact Us")
+    Rel_Aggregation_Down(landing, contact_us)
+
+    Application_Component(privacy_policy, "Privacy Policy")
+    Rel_Aggregation_Down(landing, privacy_policy)
+
+}
+
+Group(frontend_group, "Frontend") {
+
     Application_Interface(frontend, "Frontend Web App\n(JavaScript Svelte SPA)")
+
+    Application_Interface(sign_up_in_out, "Sign Up/In/Out")
+    Rel_Aggregation_Down(frontend, sign_up_in_out)
+
+    Application_Interface(manage_resources, "Manage Resources")
+    Rel_Aggregation_Down(frontend, manage_resources)
+
+    Application_Interface(upload_download, "Upload/Download")
+    Rel_Aggregation_Down(frontend, upload_download)
+
+}
+
+Group(backend_group, "Backend") {
+
     Application_Service(backend, "Backend Web Services\n(Elixir Phoenix API)")
-    Application_Function(data, "Persistence\n(PostgreSQL database)")
 
-    Rel_Serving_Down(website, frontend)
-    Rel_Serving_Down(frontend, backend)
-    Rel_Serving_Down(backend, data)
+    Application_Service(request_router, "Request Router")
+    Rel_Aggregation_Down(backend, request_router)
 
-}
+    Application_Service(template_engine, "Template Engine")
+    Rel_Aggregation_Down(backend, template_engine)
 
-Group(vendors, "Vendors") {
-
-    Technology_Node(github, "GitHub", true) {
-        Technology_SystemSoftware(github_dependabot, "GitHub Dependabot\n(security scanning)")
-        Technology_SystemSoftware(github_actions_ci_cd, "GitHub Actions CI/CD\n(continuous integration)")
-    }
-
-    Technology_Node(aws, "Amazon Web Services (AWS)", true) {
-        Technology_SystemSoftware(aws_ecr, "Elastic Container Registry (ECR)\n(managed Docker containers)")
-        Technology_SystemSoftware(aws_rds, "Relational Database Service (RDS)\n(managed Postgres databases)")
-    }
+    Application_Service(query_builder, "Query Builder")
+    Rel_Aggregation_Down(backend, query_builder)
 
 }
 
-Technology_Function(system_quality_attributes, "System Quality Attributes", true) {
+Group(data_group, "Data") {
 
-    Technology_Function(security, "security")
-    Rel_Serving_Down(github_dependabot, security)
+    Application_DataObject(freeform_data, "Freeform Data\n(complex analysis)")
 
-    Technology_Function(deployability, "deployability")
-    Rel_Serving_Down(github_actions_ci_cd, deployability)
+    Application_DataObject(data_frames, "Data Frames\n(table structures)")
+    Rel_Aggregation_Down(freeform_data, data_frames)
 
-    Technology_Function(durability, "durability")
-    Rel_Serving_Down(aws_rds, durability)
+    Application_DataObject(apache_arrow, "Arrow\n(in memory)")
+    Rel_Aggregation_Down(freeform_data, apache_arrow)
 
-    Technology_Function(autoscalability, "autoscalability")
-    Rel_Serving_Down(aws_ecr, autoscalability)
+    Application_DataObject(apache_parquet, "Parquet\n(on disk)")
+    Rel_Aggregation_Down(freeform_data, apache_parquet)
+
+    Application_DataObject(relational_data, "Relational Data\n(PostgreSQL database)")
+
+    Application_DataObject(read_replicas, "Read Replicas\n(CQRS pattern)")
+    Rel_Aggregation_Down(relational_data, read_replicas)
+
+    Application_DataObject(stored_procedures, "Stored Procedures\n(prepared SQL)")
+    Rel_Aggregation_Down(relational_data, stored_procedures)
+
+    Application_DataObject(event_triggers, "Event Triggers\n(reactions SQL)")
+    Rel_Aggregation_Down(relational_data, event_triggers)
 
 }
 
-Rel_Serving_Down(components, vendors)
+Rel_Serving_Right(landing_group, frontend_group)
+Rel_Serving_Right(frontend_group, backend_group)    
+Rel_Serving_Right(backend_group, data_group)
 
 @enduml
