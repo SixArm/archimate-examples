@@ -54,16 +54,18 @@ develop -[hidden]d-> program_back_end
 deploy -[hidden]d-> review_code
 deliver -[hidden]d-> refresh_nps
 
+' Stakeholder elements
+'
 ' If you prefer to see just the value stream steps,
 ' then you can comment out the following lines.
 
-Motivation_Stakeholder(customer_team, "**Customer Team**\n\n--\nDriver: Solving their pain point\n--\nAssessment: GUI is confusing\n--\nGoal: Navigation link to new item")
-Motivation_Stakeholder(account_executive, "**Account Executive**\n\n--\nDriver: sales-led satisfaction\n--\nAssessment: Priority 1 papercut\n--\nGoal: Net Promoter Score 25+")
-Motivation_Stakeholder(product_manager, "**Product Manager**\n\n--\nDriver: product-led growth\n--\nAssessment: Can help all accounts\n--\nGoal: Kanban zero papercuts")
-Motivation_Stakeholder(work_squad, "**Work Squad**\n\n--\nDriver: feature-led delivery\n--\nAssessment: Size is small\n--\nGoal: Deliver by end of week 40")
+Motivation_Stakeholder(customer_team, "**Customer Team**\n\n--\nDriver: Solving pain point\n--\nAssessment: GUI is confusing\n--\nGoal: Navigation link to new item")
+Motivation_Stakeholder(account_manager, "**Account Manager**\n\n--\nDriver: Sales-led satisfaction\n--\nAssessment: Priority 1 papercut\n--\nGoal: Net Promoter Score 25+")
+Motivation_Stakeholder(product_manager, "**Product Manager**\n\n--\nDriver: Product-led growth\n--\nAssessment: Magnitude 2 feature\n--\nGoal: Kanban zero papercuts")
+Motivation_Stakeholder(work_squad, "**Work Squad**\n\n--\nDriver: Feature-led delivery\n--\nAssessment: Size is small\n--\nGoal: Deliver by end of week 40")
 
-Rel_Flow_Left(customer_team, account_executive)
-Rel_Flow_Left(account_executive, product_manager)
+Rel_Flow_Left(customer_team, account_manager)
+Rel_Flow_Left(account_manager, product_manager)
 Rel_Flow_Left(product_manager, work_squad)
 
 Rel_Flow_Down(work_squad, design)
@@ -72,7 +74,48 @@ Rel_Flow_Up(deliver, customer_team)
 ' Hidden: from stakeholder to value stream step
 work_squad -[hidden]d-> design
 product_manager -[hidden]d-> develop
-account_executive -[hidden]d-> deploy
+account_manager -[hidden]d-> deploy
 customer_team -[hidden]d-> deliver
+
+' Deliverable elements
+'
+' If you prefer to see just the value stream steps,
+' then you can comment out the following lines.
+
+Implementation_Deliverable(visualizations, "**Visualizations**\n\n--\nSign off")
+Rel_Realization_Down(visualize_features, visualizations)
+
+Implementation_Deliverable(mockups, "**Mockups**\n\n--\nSign off")
+Rel_Realization_Down(draft_mockups, mockups)
+
+Implementation_Deliverable(plans, "**Plans**\n\n--\nSign off")
+Rel_Realization_Down(confirm_plans, plans)
+
+Implementation_Deliverable(front_end, "**Front-end dashboards**\n\n--\nPublished Screenshots")
+Rel_Realization_Down(code_front_end, front_end)
+
+Implementation_Deliverable(back_end, "**Back-end services**\n\n--\nPublished OpenAPI spec")
+Rel_Realization_Down(program_back_end, back_end)
+
+Implementation_Deliverable(documentation, "**Documentation**\n\n--\nPublished HTML pages")
+Rel_Realization_Down(update_documentation, documentation) 
+
+Implementation_Deliverable(topic_branch, "**Topic branch**\n\n--\nMerge is requested")
+Rel_Realization_Down(push_topic, topic_branch)
+
+Implementation_Deliverable(code_approval, "**Code approval**\n\n--\nMerge is integrated")
+Rel_Realization_Down(review_code, code_approval)
+
+Implementation_Deliverable(live_in_production, "**Live in production**\n\n--\nMerge is shipped")
+Rel_Realization_Down(release_build, live_in_production)
+
+Implementation_Deliverable(customer_acceptance, "**Customer acceptance**\n\n--\nDelivery sign off")
+Rel_Realization_Down(sign_acceptance, customer_acceptance)
+
+Implementation_Deliverable(nps, "**Net Promoter Score**\n\n--\nDelta in metrics")
+Rel_Realization_Down(refresh_nps, nps)
+
+Implementation_Deliverable(payment, "**Payment**\n\n--\nMoney in bank")
+Rel_Realization_Down(send_invoice, payment)
 
 @enduml
