@@ -1,4 +1,4 @@
 @startuml
-!include <archimate/Archimate>
+!include ../../Archimate.puml
 Strategy_Resource(Resource, "Resource")
 @enduml

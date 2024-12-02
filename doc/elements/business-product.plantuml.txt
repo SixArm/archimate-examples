@@ -1,4 +1,4 @@
 @startuml
-!include <archimate/Archimate>
+!include ../../Archimate.puml
 Business_Product(Product, "Product")
 @enduml

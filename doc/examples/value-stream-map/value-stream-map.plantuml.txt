@@ -1,6 +1,6 @@
 @startuml
 scale 1920*1080
-!include ../Archimate.puml
+!include ../../../Archimate.puml
 
 title Value Stream Map
 

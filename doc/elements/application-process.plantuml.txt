@@ -1,4 +1,4 @@
 @startuml
-!include <archimate/Archimate>
+!include ../../Archimate.puml
 Application_Process(Application_Process, "Application Process")
 @enduml

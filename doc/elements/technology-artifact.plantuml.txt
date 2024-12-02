@@ -1,4 +1,4 @@
 @startuml
-!include <archimate/Archimate>
+!include ../../Archimate.puml
 Technology_Artifact(Artifact, "Artifact")
 @enduml
