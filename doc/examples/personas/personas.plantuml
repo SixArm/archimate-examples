@@ -1,46 +1,42 @@
 @startuml
 scale 1920*1080
-!include Archimate.puml
+!include ../Archimate.puml
 
-title Personas Example
+title Personas
 
-Group(personas, "Personas") {
+Group(group_ceo, "CEO wants strategy") {
 
-    Group(group_ceo, "CEO wants strategy") {
+    Motivation_Stakeholder(ceo, "Chief Executive Officer")
+    Motivation_Driver(enhance_future_investments, "Enhance planning via Excel")
+    Rel_Assignment(ceo, enhance_future_investments, "driver")
+    Motivation_Assessment(excel_assessment, "Excel sheets are mostly working")
+    Rel_Assignment(enhance_future_investments, excel_assessment, "assessment")
+    Motivation_Goal(optimize_investment_strategy, "Optimize investment strategy")
+    Rel_Assignment(excel_assessment, optimize_investment_strategy, "goal")
 
-        Motivation_Stakeholder(ceo, "Chief Executive Officer")
-        Motivation_Driver(enhance_future_investments, "Enhance planning via Excel")
-        Rel_Assignment(ceo, enhance_future_investments, "driver")
-        Motivation_Assessment(excel_assessment, "Excel sheets are mostly working")
-        Rel_Assignment(enhance_future_investments, excel_assessment, "assessment")
-        Motivation_Goal(optimize_investment_strategy, "Optimize investment strategy")
-        Rel_Assignment(excel_assessment, optimize_investment_strategy, "goal")
+}
 
-    }
+Group(group_cpo, "CPO wants growth") {
 
-    Group(group_cpo, "CPO wants growth") {
+    Motivation_Stakeholder(cpo, "Chief Product Officer")
+    Motivation_Driver(provide_better_advice, "Customers want more predictive guidance")
+    Rel_Assignment(cpo, provide_better_advice, "driver")
+    Motivation_Assessment(clients_assessment, "Net Promoter Score = 25")
+    Rel_Assignment(provide_better_advice, clients_assessment, "assessment")
+    Motivation_Goal(provide_dashboards, "Provide dashboards to clients")
+    Rel_Assignment(clients_assessment, provide_dashboards, "goal")
 
-        Motivation_Stakeholder(cpo, " Chief Product Officer")
-        Motivation_Driver(provide_better_advice, "Customers want more predictive guidance")
-        Rel_Assignment(cpo, provide_better_advice, "driver")
-        Motivation_Assessment(clients_assessment, "Net Promoter Score = 25")
-        Rel_Assignment(provide_better_advice, clients_assessment, "assessment")
-        Motivation_Goal(provide_dashboards, "Provide dashboards to clients")
-        Rel_Assignment(clients_assessment, provide_dashboards, "goal")
+}
 
-    }
+Group(group_cto, "CFO wants compliance") {
 
-    Group(group_cto, "CFO wants compliance") {
-
-        Motivation_Stakeholder(cfo, " Chief Financial Officer")
-        Motivation_Driver(simplify_past_analyses, "Simplify reviews via QuickBooks")
-        Rel_Assignment(cfo, simplify_past_analyses, "driver")
-        Motivation_Assessment(quickbooks_assessment, "QuickBooks API is fully working")
-        Rel_Assignment(simplify_past_analyses, quickbooks_assessment, "assessment")
-        Motivation_Goal(audit_past_payments, "Audit past payments")
-        Rel_Assignment(quickbooks_assessment, audit_past_payments, "goal")
-
-    }
+    Motivation_Stakeholder(cfo, " Chief Financial Officer")
+    Motivation_Driver(simplify_past_analyses, "Simplify reviews via QuickBooks")
+    Rel_Assignment(cfo, simplify_past_analyses, "driver")
+    Motivation_Assessment(quickbooks_assessment, "QuickBooks API is fully working")
+    Rel_Assignment(simplify_past_analyses, quickbooks_assessment, "assessment")
+    Motivation_Goal(audit_past_payments, "Audit past payments")
+    Rel_Assignment(quickbooks_assessment, audit_past_payments, "goal")
 
 }
 
