@@ -1,8 +1,8 @@
 @startuml
 scale 1920*1080
-!include archimate.puml
+!include ../Archimate.puml
 
-title Value Stream Map Details Example
+title Value Stream Map Aggregation
 
 Strategy_ValueStream(design, "**Design**\n12-24 hours work time\n6-9 days wall time") 
 Strategy_ValueStream(visualize_features, "**Visualize features**\n4-8 hours work time\n2-3 days wall time")
@@ -47,5 +47,32 @@ Rel_Flow_Right(refresh_nps, send_invoice)
 Rel_Flow_Right(design, develop)
 Rel_Flow_Right(develop, deploy)
 Rel_Flow_Right(deploy, deliver)
+
+' Hidden: from higher-level into lower-level middle element
+design -[hidden]d-> draft_mockups
+develop -[hidden]d-> program_back_end
+deploy -[hidden]d-> review_code
+deliver -[hidden]d-> refresh_nps
+
+' If you prefer to see just the value stream steps,
+' then you can comment out the following lines.
+
+Motivation_Stakeholder(customer_team, "**Customer Team**\n\n--\nDriver: Solving their pain point\n--\nAssessment: GUI is confusing\n--\nGoal: Navigation link to new item")
+Motivation_Stakeholder(account_executive, "**Account Executive**\n\n--\nDriver: sales-led satisfaction\n--\nAssessment: Priority 1 papercut\n--\nGoal: Net Promoter Score 25+")
+Motivation_Stakeholder(product_manager, "**Product Manager**\n\n--\nDriver: product-led growth\n--\nAssessment: Can help all accounts\n--\nGoal: Kanban zero papercuts")
+Motivation_Stakeholder(work_squad, "**Work Squad**\n\n--\nDriver: feature-led delivery\n--\nAssessment: Size is small\n--\nGoal: Deliver by end of week 40")
+
+Rel_Flow_Left(customer_team, account_executive)
+Rel_Flow_Left(account_executive, product_manager)
+Rel_Flow_Left(product_manager, work_squad)
+
+Rel_Flow_Down(work_squad, design)
+Rel_Flow_Up(deliver, customer_team)
+
+' Hidden: from stakeholder to value stream step
+work_squad -[hidden]d-> design
+product_manager -[hidden]d-> develop
+account_executive -[hidden]d-> deploy
+customer_team -[hidden]d-> deliver
 
 @enduml
