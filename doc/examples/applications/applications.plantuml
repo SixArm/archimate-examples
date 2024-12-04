@@ -5,17 +5,18 @@ scale 1920*1080
 title Applications
 
 Group(landing_group, "Landing") {
+    top to bottom direction
 
     Application_Component(landing, "Landing Website\n(HTML/CSS static pages)")
 
-    Application_Component(welcome_page, "Welcome Page")
-    Rel_Aggregation_Down(landing, welcome_page)
+    Application_Component(header_section, "**Header**\nProducts\nServices\nAbout Us")
+    Rel_Aggregation_Down(landing, header_section)
 
-    Application_Component(contact_us, "Contact Us")
-    Rel_Aggregation_Down(landing, contact_us)
+    Application_Component(body_section, "**Body**\nFeatures\nTestimonials\nArticles")
+    Rel_Aggregation_Down(header_section, body_section)
 
-    Application_Component(privacy_policy, "Privacy Policy")
-    Rel_Aggregation_Down(landing, privacy_policy)
+    Application_Component(footer, "**Footer**\nTerms of Services\nPrivacy Policy\nContact Us")
+    Rel_Aggregation_Down(body_section, footer)
 
 }
 
