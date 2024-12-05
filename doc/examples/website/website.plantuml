@@ -1,0 +1,50 @@
+@startuml
+scale 1920*1080
+!include ../../../Archimate.puml
+
+title Website High-Level Diagram
+
+Group(landing_group, "Landing") {
+    top to bottom direction
+
+    Application_Component(landing, "**Landing Website**\n(HTML/CSS static pages)")
+    Application_Component(header_section, "**Header**\n\n--\nProducts\n--\nServices\n--\nAbout Us")
+    Application_Component(body_section, "**Body**\n\n--\nFeatures\n--\nTestimonials\n--\nArticles")
+    Application_Component(footer_section, "**Footer**\n\n--\nTerms of Services\n--\nPrivacy Policy\n--\nContact Us")
+
+    Rel_Aggregation_Down(landing, header_section)
+    Rel_Aggregation_Down(landing, body_section)
+    Rel_Aggregation_Down(landing, footer_section)
+
+}
+
+Group(frontend_group, "Frontend") {
+
+    Application_Interface(frontend, "**Frontend**\n(JavaScript Svelte SPA)")
+    Application_Interface(signing, "**Sign Up/In/Out**\n(Authentication interactions)\n\n--\nSign up via email\n--\nSign in via social media\n--\nMulti-Factor Authentication")
+    Application_Interface(manage_resources, "**Manage Resources**\n(RESTful interactions)\n\n--\nCreate, Read, Update, Delete\n--\nImport/Export Data\n--\nConnect/Disconnect Integrations")
+    Application_Interface(change_settings, "**Change Settings**\n(Configuration interactions)\n\n--\nLook and feel\n--\nPersonal preferences\n--\nBilling methods")
+
+    Rel_Aggregation_Down(frontend, signing)
+    Rel_Aggregation_Down(frontend, manage_resources)
+    Rel_Aggregation_Down(frontend, change_settings)
+
+}
+
+Group(backend_group, "Backend") {
+
+    Application_Service(backend, "**Backend**\n(Elixir Phoenix API)")
+    Application_Service(framework_services, "**Framework Services**\n\n--\nLiveView sockets\n--\nHot reload\n--\nOpenAPI endpoints")
+    Application_Service(freeform_data, "**Freeform data using Polars**\n\n--\nData Frames for structures\n--\nArrow for in memory\n--\nParquet for on disk")
+    Application_Service(relational_data, "**Relational data using Postgres**\n\n--\nLiquibase migrations\n--\nCQRS with read replicas\n--\nStored procedures & triggers")
+
+    Rel_Aggregation_Down(backend, framework_services)
+    Rel_Aggregation_Down(backend, freeform_data)
+    Rel_Aggregation_Down(backend, relational_data)
+
+}
+
+Rel_Serving_Right(landing_group, frontend_group)
+Rel_Serving_Right(frontend_group, backend_group)
+
+@enduml
