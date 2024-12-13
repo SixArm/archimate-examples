@@ -11,8 +11,8 @@ Strategy_ValueStream(confirm_plans, "**Confirm plans with customers**\n4-8 hours
 Rel_Aggregation_Down(design, visualize_features)
 Rel_Aggregation_Down(design, draft_mockups)
 Rel_Aggregation_Down(design, confirm_plans)
-Rel_Flow_Right(visualize_features, draft_mockups)
-Rel_Flow_Right(draft_mockups, confirm_plans)
+Rel_Flow_Right(visualize_features, draft_mockups, "Wait time #1:\n1-2 hours")
+Rel_Flow_Right(draft_mockups, confirm_plans, "Wait time #2:\n 1-2 hours")
 
 Strategy_ValueStream(develop, "**Develop**\n12-24 hours work time\n6-9 days wall time")
 Strategy_ValueStream(code_front_end, "**Code front-end dashboards**\n4-8 hours work time\n2-3 days wall time")
@@ -21,8 +21,8 @@ Strategy_ValueStream(update_documentation, "**Update documentation**\n4-8 hours 
 Rel_Aggregation_Down(develop, code_front_end)
 Rel_Aggregation_Down(develop, program_back_end)
 Rel_Aggregation_Down(develop, update_documentation)
-Rel_Flow_Right(code_front_end, program_back_end)
-Rel_Flow_Right(program_back_end,update_documentation)
+Rel_Flow_Right(code_front_end, program_back_end, "Wait time #4:\n 1-2 hours")
+Rel_Flow_Right(program_back_end,update_documentation, "Wait time #5:\n 1-2 hours")
 
 Strategy_ValueStream(deploy, "**Deploy**\n12-24 hours work time\n6-9 days wall time")
 Strategy_ValueStream(push_topic, "**Push topic branch**\n4-8 hours work time\n2-3 days wall time")
@@ -31,8 +31,8 @@ Strategy_ValueStream(release_build, "**Release build into production**\n4-8 hour
 Rel_Aggregation_Down(deploy, push_topic)
 Rel_Aggregation_Down(deploy, review_code)
 Rel_Aggregation_Down(deploy, release_build)
-Rel_Flow_Right(push_topic, review_code)
-Rel_Flow_Right(review_code, release_build)
+Rel_Flow_Right(push_topic, review_code, "Wait time #7:\n 1-2 hours")
+Rel_Flow_Right(review_code, release_build, "Wait time #8:\n 1-2 hours")
 
 Strategy_ValueStream(deliver, "**Deliver**\n12-24 hours work time\n6-9 days wall time")
 Strategy_ValueStream(sign_acceptance, "**Sign acceptance**\n4-8 hours work time\n2-3 days wall time")
@@ -41,12 +41,19 @@ Strategy_ValueStream(send_invoice, "**Send invoice and get paid **\n4-8 hours wo
 Rel_Aggregation_Down(deliver, sign_acceptance)
 Rel_Aggregation_Down(deliver, refresh_nps)
 Rel_Aggregation_Down(deliver, send_invoice)
-Rel_Flow_Right(sign_acceptance, refresh_nps)
-Rel_Flow_Right(refresh_nps, send_invoice)
+Rel_Flow_Right(sign_acceptance, refresh_nps, "Wait time #10:\n 1-2 hours")
+Rel_Flow_Right(refresh_nps, send_invoice, "Wait time #11:\n 1-2 hours")
 
+' Upper-layer right arrows
 Rel_Flow_Right(design, develop)
 Rel_Flow_Right(develop, deploy)
 Rel_Flow_Right(deploy, deliver)
+
+' Lower-layer right arrows
+Rel_Flow_Right(confirm_plans, code_front_end, "Wait time #3:\n 1-2 hours")
+Rel_Flow_Right(update_documentation, push_topic, "Wait time #6:\n 1-2 hours")
+Rel_Flow_Right(release_build, sign_acceptance, "Wait time #9:\n 1-2 hours")
+
 
 ' Hidden: from higher-level into lower-level middle element
 design -[hidden]d-> draft_mockups
@@ -106,7 +113,7 @@ Rel_Realization_Down(push_topic, topic_branch)
 Implementation_Deliverable(code_approval, "**Code approval**\n\n--\nMerge is integrated")
 Rel_Realization_Down(review_code, code_approval)
 
-Implementation_Deliverable(live_in_production, "**Live in production**\n\n--\nMerge is shipped")
+Implementation_Deliverable(live_in_production, "**Live in production**\n\n--\nMerge is deployed")
 Rel_Realization_Down(release_build, live_in_production)
 
 Implementation_Deliverable(customer_acceptance, "**Customer acceptance**\n\n--\nDelivery sign off")
